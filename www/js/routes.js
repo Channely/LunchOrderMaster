@@ -8,6 +8,18 @@ myModule.config(function($routeProvider) {
         }).when("/order_index", {
             templateUrl: "pages/order_index.html",
             controller: OrderIndexController
+        }).when("/order_index/select_people", {
+            templateUrl: "pages/select_people.html",
+            controller: SelectPeopleController
+        }).when("/order_index/select_Restaurant", {
+            templateUrl: "pages/select_Restaurant.html",
+            controller: SelectRestaurantController
+        }).when("/order_index/select_set", {
+            templateUrl: "pages/select_set.html",
+            controller: SelectSetController
+        }).when("/orders_list", {
+            templateUrl: "pages/orders_list.html",
+            controller: OrdersListController
         }).otherwise({
             redirectTo: "/"
         });

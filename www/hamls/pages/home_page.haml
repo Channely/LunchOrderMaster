@@ -1,17 +1,12 @@
 %header
   订餐
-  -#.header-left
-  -#  %a.side-slide-trigger.btn-style.btn-4
-  -#.header-right
-  -#  %a.btn-style.btn-4
-  -#    同步数据
 #wrapper.wrapper.scrollable
   %form.wrapper-inner
     %fieldset.form-wrapper
       .break20
       .break20
-        %a.btn-style.btn-3.text-center
+        %a.btn-style.btn-3.text-center(ng-tap = 'go_ordering()')
           帮订餐
       .break20
-        %a.btn-style.btn-3.text-center
+        %a.btn-style.btn-3.text-center(ng-tap = 'look_orders()')
           看订单
