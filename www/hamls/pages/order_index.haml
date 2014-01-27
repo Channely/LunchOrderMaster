@@ -1,0 +1,42 @@
+%header
+  订餐
+  .header-left
+    %a.btn.btn-primary
+      Back
+  -#.header-right
+  -#  %a.btn-style.btn-4
+  -#    同步数据
+#wrapper.wrapper.scrollable
+  %form.wrapper-inner
+    %fieldset.form-wrapper
+      .break20
+        %h5 人:
+        %input.input-full.input-large(type="text")
+        %a.btn-style.btn-3.text-center
+          选人
+      .break20
+        %h5 餐厅:
+        %input.input-full.input-large(type="text")
+        %a.btn-style.btn-3.text-center
+          选餐厅
+      .break20
+        %h5 套餐:
+        %input.input-full.input-large(type="text")
+        %a.btn-style.btn-3.text-center
+          选套餐
+      .break20
+        %a.btn-style.btn-3.text-center
+          确认
+
+-##wrapper.wrapper.scrollable
+-#  %form.wrapper-inner
+-#    %fieldset.form-wrapper
+-#      %br
+-#      %input.input-full(type="text" ng-model="act_name" placeholder="活动名称" ng-change="judge_act_name()")
+-#      %p.red {{act_name_null}}
+-#      %br
+-#      %textarea.input-full(type="text" ng-model="act_intro" placeholder="活动介绍" ng-change="judge_act_intro()")
+-#      %p.red {{act_intro_null}}
+-#      %br
+-#      %input.input-full(type="text" ng-model="act_time" placeholder="地点＆时间" ng-change="judge_act_time()")
+-#      %p.red {{act_time_null}}
