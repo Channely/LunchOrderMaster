@@ -12,14 +12,26 @@
 
     /manual-css
     %link(rel="stylesheet" type="text/css" href="lib/js/angular/mobile-nav.css")
+    %link(rel="stylesheet" type="text/css" href="css/android.css")
+    %link(rel="stylesheet" type="text/css" href="css/bootstrap.min.css")
+    %link(rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css")
+    %link(rel="stylesheet" type="text/css" href="css/bootstrapswitch.css")
+    %link(rel="stylesheet" type="text/css" href="css/bootstrapswitch-custom.css")
+    %link(rel="stylesheet" type="text/css" href="css/font-awesome.css")
+    %link(rel="stylesheet" type="text/css" href="css/index.css")
 
 
-  %body(ng-controller="MainCtrl")
+  %body(ng-controller="MainCtrl" style="padding:0" )
     %mobile-view
 
     %script(lang="javascript" src="lib/js/cordova/cordova-2.1.0.js")
     %script(lang="javascript" src="lib/js/angular/angular.min.js")
     %script(lang="javascript" src="lib/js/angular/mobile-nav.min.js")
+
+    %script(lang="javascript" src="lib/js/jquery/jquery-2.0.0.min.js")
+    %script(lang="javascript" src="lib/js/bootstrap/bootstrap.min.js")
+    %script(lang="javascript" src="lib/js/bootstrap/bootstrapSwitch.js")
+    %script(lang="javascript" src="lib/js/iscroll-lite/iscroll-lite.js")
 
     %script(lang="javascript" src="lib/js/zepto/zepto.js")
     %script(lang="javascript" src="lib/js/infrastructure/native.js")
