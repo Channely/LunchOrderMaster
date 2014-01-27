@@ -8,17 +8,17 @@
     %fieldset.form-wrapper
       .break20
         %h5 人:
-        %input.input-sm.input-full.input-large.form-control(type="text")
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true')
         %a.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_people_page()')
           选人
       .break20
         %h5 餐厅:
-        %input.input-full.input-large.form-control(type="text")
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true')
         %a.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_restaurant_page()')
           选餐厅
       .break20
         %h5 套餐:
-        %input.input-full.input-large.form-control(type="text")
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true')
         %a.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_set_page()')
           选套餐
       .break20

@@ -5,6 +5,6 @@
       Back
 #wrapper.wrapper.scrollable
   %ul.list-group
-    %li.list-group-item
-      Goods
-      .badge $12
+    %li.list-group-item(ng-repeat = 'food in foods')
+      {{food.name}}
+      .badge ${{food.price}}

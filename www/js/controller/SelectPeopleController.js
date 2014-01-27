@@ -4,6 +4,10 @@ function SelectPeopleController($scope, $navigate, $http){
         $scope.users = data;
     });
 
+    $scope.select_user = function(user){
+        localStorage.setItem('users',JSON.stringify(JSON.parse(localStorage.getItem('users')||'[]').push(user)))
+    }
+
     $scope.go_to_order_index_page = function(){
         $navigate.go('/order_index')
     }

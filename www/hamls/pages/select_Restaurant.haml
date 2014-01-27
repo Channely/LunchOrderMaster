@@ -5,5 +5,5 @@
       Back
 #wrapper.wrapper.scrollable
   %ul.list-group
-    %li.list-group-item
-      Goods
+    %li.list-group-item(ng-repeat = 'restaurant in reataurants' ng-tap = 'select_restaurant({restaurant.name})')
+      {{restaurant.name}}
