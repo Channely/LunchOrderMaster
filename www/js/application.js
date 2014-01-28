@@ -34,6 +34,10 @@ myModule.directive('ngTap', function() {
 var native_access;
 $(document).ready(function () {
 
+    localStorage.user = localStorage.user||''
+    localStorage.restaurant = localStorage.restaurant||''
+    localStorage.food_information_object = localStorage.food_information_object||'{"name":"","price":""}'
+
 
     native_access = new NativeAccess();
 

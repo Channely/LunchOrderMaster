@@ -1,8 +1,8 @@
 function OrderIndexController($scope, $navigate){
 
-    $scope.user = JSON.parse(localStorage.getItem('user')||"[]")
-    $scope.restaurant = JSON.parse(localStorage.getItem('restaurant')||"[]")
-    $scope.food = JSON.parse(localStorage.getItem('food')||"[]")
+    $scope.user = localStorage.getItem('user')
+    $scope.restaurant = localStorage.getItem('restaurant')
+    $scope.food = JSON.parse(localStorage.getItem('food_information_object'))
 
 
 

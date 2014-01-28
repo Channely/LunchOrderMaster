@@ -7,6 +7,7 @@ function SelectPeopleController($scope, $navigate, $http){
 
     $scope.select_user = function(user){
         localStorage.setItem('user',user)
+        $scope.go_to_order_index_page()
     }
 
 

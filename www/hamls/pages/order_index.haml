@@ -8,19 +8,19 @@
     %fieldset.form-wrapper
       .break20
         %h5 人:
-        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true')
-        %a.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_people_page()')
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{user}}")
+        %button.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_people_page()')
           选人
       .break20
         %h5 餐厅:
-        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true')
-        %a.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_restaurant_page()')
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{restaurant}}")
+        %button.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_restaurant_page()')
           选餐厅
       .break20
         %h5 套餐:
-        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true')
-        %a.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_set_page()')
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{food.name}}   ${{food.price}}")
+        %button.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_set_page()' ng-disabled = '!restaurant')
           选套餐
       .break20
-        %a.btn-style.btn-3.text-center(ng-tap = 'submit_ordering()')
+        %button.btn-style.btn-3.text-center(ng-tap = 'submit_ordering()' ng-disabled = '!restaurant || !food.name || !user')
           确认
