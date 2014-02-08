@@ -5,22 +5,28 @@
       Back
 #wrapper.wrapper.scrollable
   %ul.list-group
-    %li.font-white.list-group-item.active {{orders_count}}人已定
+    %li.font-white.list-group-item.active
+      {{orders_count}}人已定
     %li.list-group-item(ng-repeat = 'order in orders')
       %span
         %h4
           {{order.user}}
         {{order.restaurant}}   {{order.food.name}}
-      .badge(class="{{order.price_status}}") &yen; {{order.food.price}}
-    %li.font-white.list-group-item.active {{unorders_count}}人未定
+      .badge.bg-color-white(class="{{order.price_status}}" )
+        &yen; {{order.food.price}}
+    %li.font-white.list-group-item.active
+      {{unorders_count}}人未定
     %li.list-group-item(ng-repeat = 'unorder in unorders')
       %span
         %h4
           {{unorder.name}}
-
 %footer
-  %ul.footer-nav.footer-nav-2tabs(style="padding-left:0px")
+  %ul.footer-nav.footer-nav-2tabs.padding-left-0
     %li.active
-      %a(style="text-align: right" ) {{orders_count}}人已定, {{unorders_count}}人未定,&nbsp;
+      %a(style="text-align: right" )
+        %h5
+          {{orders_count}}人已定, {{unorders_count}}人未定,&nbsp;
     %li.active
-      %a(style="text-align: left" ) 总计{{total_price}}元
+      %a(style="text-align: left" )
+        %h5
+          总计 {{total_price}}元

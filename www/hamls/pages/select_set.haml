@@ -7,4 +7,5 @@
   %ul.list-group
     %li.list-group-item(ng-repeat = 'food in foods' ng-tap = "select_food({{food}})")
       {{food.name}}
-      .badge &yen; {{food.price}}
+      .badge.bg-color-white.within_price
+        &yen; {{food.price}}

@@ -3,9 +3,29 @@
 }
 
 .within_price {
-    color: #000000;
+    color: #000;
 }
 
 .font-white {
-    color: #ffffff;
+    color: #fff;
+}
+
+.bg-color-white {
+    background-color: #fff;
+}
+
+.padding-left-0 {
+    padding-left: 0px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+align-right {
+    text-align: right;
+}
+
+align-left {
+    text-align: left;
 }
