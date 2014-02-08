@@ -1,10 +1,10 @@
-function HomePageController($scope, $navigate){
+function HomePageController($scope, $navigate) {
 
-    $scope.go_ordering = function(){
-        $navigate.go('/order_index')
+    $scope.go_help_ordering_page = function () {
+        $navigate.go('/help_ordering_page')
     }
-    $scope.look_orders = function(){
-        $navigate.go('/orders_list')
+    $scope.go_orders_show_page = function () {
+        $navigate.go('/orders_show_page')
     }
 
 }

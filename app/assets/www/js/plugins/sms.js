@@ -1,9 +1,8 @@
+
 var native_accessor = {
 
     send_sms: function (phone, message) {
-        native_access.send_sms({"receivers": [
-            {"name": 'name', "phone": phone}
-        ]}, {"message_content": message});
+        native_access.send_sms({"receivers":[{"name":'name', "phone":phone}]}, {"message_content":message});
     },
 
     receive_message: function (json_message) {

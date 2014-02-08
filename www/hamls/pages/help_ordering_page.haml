@@ -1,0 +1,26 @@
+%header
+  订餐
+  .header-left
+    %a.btn-style.btn-4(ng-tap = 'back()')
+      Back
+#wrapper.wrapper.scrollable
+  %form.wrapper-inner
+    %fieldset.form-wrapper
+      .break20
+        %h5 人:
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{user}}")
+        %button.btn-style.btn-3.text-center.margin-top-10(ng-tap = 'go_choose_people_page()')
+          选人
+      .break20
+        %h5 餐厅:
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{restaurant}}")
+        %button.btn-style.btn-3.text-center.margin-top-10(ng-tap = 'go_choose_restaurant_page()')
+          选餐厅
+      .break20
+        %h5 套餐:
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{food.name}}   {{food.price}}")
+        %button.btn-style.btn-3.text-center.margin-top-10(ng-tap = 'go_choose_package_page()' ng-disabled = '!restaurant')
+          选套餐
+      .break20
+        %button.btn-style.btn-3.text-center(ng-tap = 'submit_ordering()' ng-disabled = '!restaurant || !food.name || !user')
+          确认

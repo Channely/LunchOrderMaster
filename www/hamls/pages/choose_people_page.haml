@@ -1,0 +1,9 @@
+%header
+  选人
+  .header-left
+    %a.btn-style.btn-4(ng-tap = 'back()')
+      Back
+#wrapper.wrapper.scrollable
+  %ul.list-group
+    %li.list-group-item(ng-repeat = 'user in users' ng-tap = "select_user('{{user.name}}')")
+      {{user.name}}

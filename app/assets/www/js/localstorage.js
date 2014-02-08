@@ -35,19 +35,19 @@ function get_the_unorders_people_name_array(unorders) {
     return unorders
 }
 
-function get_total_price() {
-    var total_price = 0,
+function get_total_price(){
+    var total_price=0,
         orders = JSON.parse(localStorage.getItem('orders_list'));
 
-    for (var i = 0; i < orders.length; i++) {
-        total_price += orders[i].food.price;
+    for(var i = 0;i<orders.length;i++){
+        total_price+=orders[i].food.price;
     }
 
     return parseFloat(total_price).toFixed(2)
 }
 
-function change_foods_price_to_float_format(orders) {
-    for (index in orders) {
+function change_foods_price_to_float_format(orders){
+    for(index in orders){
         orders[index].food.price = parseFloat(orders[index].food.price).toFixed(2);
     }
     return orders

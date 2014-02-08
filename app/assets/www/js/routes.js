@@ -1,4 +1,4 @@
-myModule.config(function ($routeProvider) {
+myModule.config(function($routeProvider) {
     $routeProvider.when("/", {
         templateUrl: "pages/home_page.html",
         controller: HomePageController
@@ -30,7 +30,7 @@ myModule.config(function ($routeProvider) {
 });
 
 /** Here is example
- myModule.config(function($routeProvider) {
+myModule.config(function($routeProvider) {
     $routeProvider.when("/", {
         templateUrl: "pages/activity_list_page.html",
         controller: ActivityListController
@@ -44,4 +44,4 @@ myModule.config(function ($routeProvider) {
             redirectTo: "/"
         });
 });
- **/
+**/

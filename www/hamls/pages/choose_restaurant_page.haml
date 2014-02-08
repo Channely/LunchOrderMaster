@@ -1,0 +1,9 @@
+%header
+  选餐厅
+  .header-left
+    %a.btn-style.btn-4(ng-tap = 'back()')
+      Back
+#wrapper.wrapper.scrollable
+  %ul.list-group
+    %li.list-group-item(ng-repeat = 'restaurant in restaurants' ng-tap = 'select_restaurant("{{restaurant.name}}")')
+      {{restaurant.name}}
