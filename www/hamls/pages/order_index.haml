@@ -18,7 +18,7 @@
           选餐厅
       .break20
         %h5 套餐:
-        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{food.name}}   ${{food.price}}")
+        %input.input-sm.input-full.input-large.form-control(type="text" ng-disabled='true' value = "{{food.name}}   {{food.price}}")
         %button.btn-style.btn-3.text-center(style="margin-top:10px" ng-tap = 'go_to_select_set_page()' ng-disabled = '!restaurant')
           选套餐
       .break20
