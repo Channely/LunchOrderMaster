@@ -29,3 +29,9 @@ align-right {
 align-left {
     text-align: left;
 }
+
+#editor {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+}
