@@ -22,6 +22,8 @@ function OrderIndexController($scope, $navigate){
         $navigate.go('/order_index/select_set')
     }
     $scope.submit_ordering = function(){
+        store_the_order_information()
+        clear_order_index_page_data()
         $scope.go_to_home_page();
     }
 
