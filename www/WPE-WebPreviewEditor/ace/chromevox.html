@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACE ChromeVox demo</title>
+  <style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<pre id="editor">
+</pre>
+
+<!-- load ace -->
+<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>-->
+<script>
+    //init html mode
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/monokai");
+
+    //show self code
+    ace.require("ace/lib/net").get("editor_chromevox.html", function(t){
+        editor.setValue(t, 1);
+    })
+
+</script>
+
+</body>
+</html>

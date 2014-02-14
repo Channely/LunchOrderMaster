@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        #editor_js   {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 14px;
+            }
+    </style>
+</head>
+<body>
+    <pre id="editor_js" class='editor'>//javascript editor
+function bar() {
+
+    var x = "Show Demo?";
+    alert(x);
+}
+bar();
+    </pre>
+
+    <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        ace.require("ace/ext/language_tools");
+
+        //initial js code mode
+        var editor_js = ace.edit("editor_js");
+        editor_js.setTheme("ace/theme/monokai");
+        editor_js.session.setMode("ace/mode/javascript");
+
+        //auto complete
+        editor_js.setOptions({
+            enableBasicAutocompletion: true
+        });
+
+        //common operations
+        editor_js.find('bar');
+        editor_js.replaceAll('foo');
+        editor_js.gotoLine(3);
+        editor_js.insert("    var nothing;");
+        console.log(editor_js.session.getLength())
+
+        //compiling input code.
+        eval(editor_js.getValue())
+
+    </script>
+
+</body>
+</html>
+
+
+
+

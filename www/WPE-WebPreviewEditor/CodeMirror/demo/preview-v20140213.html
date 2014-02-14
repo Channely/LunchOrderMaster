@@ -1,0 +1,378 @@
+<!doctype html>
+<head>
+    <title>CodeMirror: HTML5 preview</title>
+    <meta charset="utf-8"/>
+    <!--codemirror-->
+    <link rel=stylesheet href=../doc/docs.css>
+    <link rel=stylesheet href=../theme/tomorrow-night-eighties.css>
+    <link rel=stylesheet href=../lib/codemirror.css>
+    <link rel=stylesheet href=../addon/display/fullscreen.css>
+    <link rel=stylesheet href=../addon/lint/lint.css>
+    <link rel=stylesheet href=../addon/fold/foldgutter.css>
+    <script src=../lib/codemirror.js></script>
+    <script src=../mode/xml/xml.js></script>
+    <script src=../mode/javascript/javascript.js></script>
+    <script src=../mode/css/css.js></script>
+    <script src=../mode/htmlmixed/htmlmixed.js></script>
+    <!--<script src="../addon/selection/active-line.js"></script>-->
+    <script src="../addon/display/fullscreen.js"></script>
+    <script src="../addon/edit/closebrackets.js"></script>
+    <script src="../addon/edit/closetag.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js"></script>
+    <script src="https://rawgithub.com/stubbornella/csslint/master/release/csslint.js"></script>
+    <script src="../addon/lint/lint.js"></script>
+    <script src="../addon/lint/javascript-lint.js"></script>
+    <script src="../addon/lint/css-lint.js"></script>
+    <script src="../addon/fold/foldcode.js"></script>
+    <script src="../addon/fold/foldgutter.js"></script>
+    <script src="../addon/fold/brace-fold.js"></script>
+    <script src="../addon/fold/xml-fold.js"></script>
+    <script src="../addon/fold/comment-fold.js"></script>
+    <!--bootstrap-->
+    <link href='../../css/bootstrap.min.css' rel='stylesheet' type='text/css'/>
+    <link href='../../css/bootstrap-theme.min.css' rel='stylesheet' type='text/css'/>
+    <link href='../../css/font-awesome.min.css' rel='stylesheet' type='text/css'/>
+
+    <style type=text/css>
+        body {
+            background: #1d1f20;
+        }
+
+        .CodeMirror {
+            float: left;
+            width: 65%;
+            height: 550px;
+            border: 0px solid black;
+
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+            color: black;
+            font-size: 14px;
+            line-height: 19px;
+            direction: ltr;
+        }
+
+            /*cursor color*/
+        .cm-s-tomorrow-night-eighties .CodeMirror-cursor {
+            border-left: 2px solid #eeeeee !important;
+        }
+
+            /*editor color*/
+        .cm-s-tomorrow-night-eighties.CodeMirror {
+            background: #232c31;
+            color: #F7F0F0;
+        }
+
+        .cm-s-tomorrow-night-eighties .CodeMirror-gutters {
+            background: #232c31;
+            color: #F7F0F0;
+            border-right: 0px;
+        }
+
+            /*preview window*/
+        iframe {
+            width: 35%;
+            float: left;
+            height: 550px;
+            background: #1d1f20;
+            color: #ffffff;
+            border: 0px solid black;
+        }
+
+            /*code window*/
+        article {
+            padding: 0px;
+            border-right: 0px;
+            margin-left: 230px;
+            min-width: 1000px;
+        }
+
+            /*left navbar*/
+        #nav {
+            width: 230px;
+        }
+
+        #nav ul a {
+            color: #a21313;
+            padding: 0 7px 1px 11px;
+        }
+
+            /*header bar*/
+        .navbar {
+            min-height: 45px;
+            height: 45px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-static-top" style="height: 45px" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<div id=nav>
+    <!--<a href="http://codemirror.net"><img id=logo src="../doc/logo.png"></a>-->
+    <a class=active href="#">
+        <h1>CodeCity</h1>
+    </a>
+
+    <ul>
+        <li><a href="#">Home</a>
+        <li><a href="#">Manual</a>
+        <li><a href="#">Code</a>
+        <li><a href="#">Last</a>
+        <li><a href="#">Next</a>
+        <li><a href="#">Hint</a>
+        <li><a href="#">Answer</a>
+        <li><a href="#">Back</a>
+    </ul>
+
+    <a class=active href="#">
+        <h3>HTML5/Lesson1</h3>
+    </a>
+
+    <h5>
+        html
+        <input type="file" id="fileInput">
+        javascript
+        <input type="file" id="fileInput_js">
+        css
+        <input type="file" id="fileInput_css">
+    </h5>
+</div>
+
+<article style="min-height: inherit">
+
+    <div>
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#code_page" data-toggle="tab">HTML</a></li>
+            <li class=""><a href="#code_js_page" data-toggle="tab">JS</a></li>
+            <li class=""><a href="#code_css_page" data-toggle="tab">CSS</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active in" id="code_page">
+                <textarea class="tab-pane active in" id=code name=code>
+<!doctype html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>HTML5 canvas demo</title>
+    <style>p {
+        font-family: monospace;
+        color: lime
+    }</style>
+</head>
+<body>
+<p>Canvas pane goes here:</p>
+<canvas id=pane width=300 height=480></canvas>
+<script>
+    var canvas = document.getElementById('pane');
+    var context = canvas.getContext('2d');
+
+    context.fillStyle = 'rgba(250, 0, 0, 1)';
+    context.fillRect(50, 50, 55, 50);
+
+    context.fillStyle = 'rgba(0, 0, 250, 0.7)';
+    context.fillRect(70, 70, 55, 50);
+</script>
+</body>
+</html>
+                </textarea>
+            </div>
+
+            <div class="tab-pane" id="code_js_page">
+                <textarea class="tab-pane" id=code_js name=code_js></textarea>
+            </div>
+            <div class="tab-pane" id="code_css_page">
+                <textarea class="tab-pane" id=code_css name=code_css></textarea>
+            </div>
+        </div>
+    </div>
+
+    <iframe id=preview></iframe>
+
+    <script name=code>
+        var delay;
+        // Initialize CodeMirror editor for html5.
+        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+            //choose language
+            mode: 'text/html',
+//              mode: "javascript",
+//              mode: "css",
+            // add-on active-line line-number
+//            styleActiveLine: true,
+            lineNumbers: true,
+            lineWrapping: true,
+            //addd-on lint
+//              gutters: ["CodeMirror-lint-markers"],
+//              lint: true,
+            // add-on auto-close-brackets
+            autoCloseBrackets: true,
+            // add-on auto-close-tags
+            autoCloseTags: true,
+            // add folding
+            foldGutter: true,
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            // add-on full-screen key:F11
+            extraKeys: {
+                "F11": function (cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
+                "Esc": function (cm) {
+                    if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+                }
+            }
+        });
+        // theme
+        editor.setOption("theme", "tomorrow-night-eighties");
+        // update preview window when code changed.
+        editor.on("change", function () {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 300);
+        });
+        function updatePreview() {
+            var previewFrame = document.getElementById('preview');
+            var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            preview.open();
+            preview.write(editor.getValue());
+            preview.close();
+        }
+        setTimeout(updatePreview, 300);
+
+    </script>
+
+    <script name=code_js>
+        // Initialize CodeMirror editor for js.
+        var editor_js = CodeMirror.fromTextArea(document.getElementById('code_js'), {
+            mode: "javascript",
+//            styleActiveLine: true,
+            lineNumbers: true,
+            lineWrapping: true,
+            // addd-on lint && folding
+            gutters: ["CodeMirror-lint-markers", "CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            lint: true,
+            foldGutter: true,
+            // add-on auto-close-brackets
+            autoCloseBrackets: true,
+            // add-on full-screen key:F11
+            extraKeys: {
+                "F11": function (cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
+                "Esc": function (cm) {
+                    if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+                }
+            }
+        });
+        editor_js.setOption("theme", "tomorrow-night-eighties");
+        // update preview window when code changed.
+        editor_js.on("change", function () {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 300);
+        });
+
+    </script>
+
+    <script name=code_css>
+        // Initialize CodeMirror editor for css.
+        var editor_css = CodeMirror.fromTextArea(document.getElementById('code_css'), {
+            mode: "css",
+//            styleActiveLine: true,
+            lineNumbers: true,
+            lineWrapping: true,
+            // addd-on lint && folding
+            gutters: ["CodeMirror-lint-markers", "CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            lint: true,
+            foldGutter: true,
+            // add-on auto-close-brackets
+            autoCloseBrackets: true,
+            // add-on full-screen key:F11
+            extraKeys: {
+                "F11": function (cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
+                "Esc": function (cm) {
+                    if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+                }
+            }
+        });
+        editor_css.setOption("theme", "tomorrow-night-eighties");
+        // update preview window when code changed.
+        editor_css.on("change", function () {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 300);
+        });
+    </script>
+
+    <script name=choose_file>
+        //choose file to show in editor html
+        //choose file to show in editor js
+        //choose file to show in editor css
+        window.onload = function () {
+            var fileInput = document.getElementById('fileInput');
+            fileInput.addEventListener('change', function (e) {
+                var file = fileInput.files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    editor.setValue(reader.result)
+                }
+                reader.readAsText(file);
+            });
+
+            var fileInput_js = document.getElementById('fileInput_js');
+            fileInput_js.addEventListener('change', function (e) {
+                var file_js = fileInput_js.files[0];
+                var reader_js = new FileReader();
+                reader_js.onload = function (e) {
+                    editor_js.setValue(reader_js.result)
+                }
+                reader_js.readAsText(file_js);
+            });
+
+            var fileInput_css = document.getElementById('fileInput_css');
+            fileInput_css.addEventListener('change', function (e) {
+                var file_css = fileInput_css.files[0];
+                var reader_css = new FileReader();
+                reader_css.onload = function (e) {
+                    editor_css.setValue(reader_css.result)
+                }
+                reader_css.readAsText(file_css);
+            });
+        }
+    </script>
+
+</article>
+
+<script lang='javascript' src='../../lib/js/jquery/jquery-2.0.0.min.js'></script>
+<script lang='javascript' src='../../lib/js/bootstrap/bootstrap.min.js'></script>
+
+</body>

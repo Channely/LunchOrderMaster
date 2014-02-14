@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        #editor_html {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<pre id="editor_html" class='editor'>
+</pre>
+<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>-->
+
+<script>
+    //initial
+    var editor_html = ace.edit("editor_html");
+    editor_html.setTheme("ace/theme/monokai");
+    editor_html.session.setMode("ace/mode/html");
+
+    editor_html.insert('<script type="text/javascript" charset="utf-8" />');
+
+    ace.require("ace/lib/net").get("editor_html.html", function(t){
+        editor_html.setValue(t, 1);
+    })
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
