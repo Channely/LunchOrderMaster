@@ -1,0 +1,54 @@
+<header>
+  订单显示
+  <div class='header-left'>
+    <a class='btn-style btn-4' ng-tap='back()'>
+      Back
+    </a>
+  </div>
+</header>
+<div class='wrapper scrollable' id='wrapper'>
+  <ul class='list-group'>
+    <li class='font-white list-group-item active'>
+      {{orders_count}}人已定
+    </li>
+    <li class='list-group-item' ng-repeat='order in orders'>
+      <span>
+        <h4>
+          {{order.user}}
+        </h4>
+        {{order.restaurant}}   {{order.food.name}}
+      </span>
+      <div class='badge bg-color-white {{order.price_status}}'>
+        &yen; {{order.food.price}}
+      </div>
+    </li>
+    <li class='font-white list-group-item active'>
+      {{unorders_count}}人未定
+    </li>
+    <li class='list-group-item' ng-repeat='unorder in unorders'>
+      <span>
+        <h4>
+          {{unorder.name}}
+        </h4>
+      </span>
+    </li>
+  </ul>
+</div>
+<footer>
+  <ul class='footer-nav footer-nav-2tabs padding-left-0'>
+    <li class='active'>
+      <a style='text-align: right'>
+        <h5>
+          {{orders_count}}人已定, {{unorders_count}}人未定,&nbsp;
+        </h5>
+      </a>
+    </li>
+    <li class='active'>
+      <a style='text-align: left'>
+        <h5>
+          总计 {{total_price}}元
+        </h5>
+      </a>
+    </li>
+  </ul>
+</footer>

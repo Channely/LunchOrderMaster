@@ -1,0 +1,40 @@
+<header>
+  订餐
+  <div class='header-left'>
+    <a class='btn-style btn-4' ng-tap='back()'>
+      Back
+    </a>
+  </div>
+</header>
+<div class='wrapper scrollable' id='wrapper'>
+  <form class='wrapper-inner'>
+    <fieldset class='form-wrapper'>
+      <div class='break20'>
+        <h5>人:</h5>
+        <input class='input-sm input-full input-large form-control' ng-disabled='true' type='text' value='{{user}}' />
+        <button class='btn-style btn-3 text-center margin-top-10' ng-tap='go_choose_people_page()'>
+          选人
+        </button>
+      </div>
+      <div class='break20'>
+        <h5>餐厅:</h5>
+        <input class='input-sm input-full input-large form-control' ng-disabled='true' type='text' value='{{restaurant}}' />
+        <button class='btn-style btn-3 text-center margin-top-10' ng-tap='go_choose_restaurant_page()'>
+          选餐厅
+        </button>
+      </div>
+      <div class='break20'>
+        <h5>套餐:</h5>
+        <input class='input-sm input-full input-large form-control' ng-disabled='true' type='text' value='{{food.name}}   {{food.price}}' />
+        <button class='btn-style btn-3 text-center margin-top-10' ng-disabled='!restaurant' ng-tap='go_choose_package_page()'>
+          选套餐
+        </button>
+      </div>
+      <div class='break20'>
+        <button class='btn-style btn-3 text-center' ng-disabled='!restaurant || !food.name || !user' ng-tap='submit_ordering()'>
+          确认
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>

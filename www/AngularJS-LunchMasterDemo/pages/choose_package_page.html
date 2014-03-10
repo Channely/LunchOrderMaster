@@ -1,0 +1,18 @@
+<header>
+  选套餐
+  <div class='header-left'>
+    <a class='btn-style btn-4' ng-tap='back()'>
+      Back
+    </a>
+  </div>
+</header>
+<div class='wrapper scrollable' id='wrapper'>
+  <ul class='list-group'>
+    <li class='list-group-item' ng-repeat='food in foods' ng-tap='select_food({{food}})'>
+      {{food.name}}
+      <div class='badge bg-color-white within_price'>
+        &yen; {{food.price}}
+      </div>
+    </li>
+  </ul>
+</div>

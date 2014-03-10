@@ -22,7 +22,20 @@
 
 
   %body(ng-controller="MainCtrl" style="padding:0" )
-    %mobile-view
+    -#%mobile-view
+
+    #editor
+      function foo(items) {
+      var x = "All this is syntax highlighted";
+      return x;
+      }
+    %script{:charset => "utf-8", :src => "http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js", :type => "text/javascript"}
+    :javascript
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.getSession().setMode("ace/mode/javascript");
+      editor.find('this');
+      editor.replace('that');
 
 
     %script(lang="javascript" src="lib/js/cordova/cordova-2.1.0.js")
